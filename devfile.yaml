@@ -5,4 +5,8 @@ components:
   type: dockerimage
   alias: dotnetcore
   image: 'mcr.microsoft.com/dotnet/core/sdk:3.0'
-  
+projects:
+  - name: mylocation
+    source:
+      type: git
+      location: 'https://github.com/donschenck/mylocation.git'
