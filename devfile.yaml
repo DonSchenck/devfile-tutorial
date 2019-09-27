@@ -1,3 +1,5 @@
+metadata:
+  name: dotnet3
 projects:
   - name: dotnet-web-simple
     source:
