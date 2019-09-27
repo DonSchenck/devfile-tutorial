@@ -1,7 +1,7 @@
 projects:
   - name: dotnet-web-simple
     source:
-      location: 'https://github.com/che-samples/dotnet-web-simple'
+      location: 'https://github.com/donschenck/devfile-tutorial.git'
       type: git
 attributes:
   persistVolumes: 'false'
@@ -54,7 +54,7 @@ commands:
                 {
                     "type": "netcoredbg",
                     "request": "launch",
-                    "program": "/projects/dotnet-web-simple/bin/Debug/netcoreapp3.0/web.dll",
+                    "program": "/projects/dotnet-web-simple/bin/Debug/netcoreapp3.0/devfile-tutorial.dll",
                     "args": [],
                     "name": ".NET Core Launch (console)",
                     "stopAtEntry": false,
