@@ -1,8 +1,11 @@
+metadata:
+  name: dotnet-web
 projects:
   - name: dotnet-web-simple
     source:
-      location: 'https://github.com/donschenck/devfile-tutorial.git'
+      location: 'https://github.com/che-samples/dotnet-web-simple'
       type: git
+      branch: netcoreapp2.2
 attributes:
   persistVolumes: 'false'
 components:
@@ -27,25 +30,13 @@ components:
     image: 'mcr.microsoft.com/dotnet/core/sdk:3.0'
 apiVersion: 1.0.0
 commands:
-  - name: update dependencies
-    actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
-        type: exec
-        command: dotnet restore
-        component: dotnet
-  - name: run
-    actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
-        type: exec
-        command: dotnet run
-        component: dotnet
   - name: build
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
         command: dotnet build
         component: dotnet
-  - name: Launch .NET 3.0 Web Application in Debug mode
+  - name: Launch .NET Web Application on Debug mode
     actions:
       - referenceContent: |
           {
@@ -54,7 +45,7 @@ commands:
                 {
                     "type": "netcoredbg",
                     "request": "launch",
-                    "program": "/projects/dotnet-web-simple/bin/Debug/netcoreapp3.0/devfile-tutorial.dll",
+                    "program": "/projects/dotnet-web-simple/bin/Debug/netcoreapp3.0/web.dll",
                     "args": [],
                     "name": ".NET Core Launch (console)",
                     "stopAtEntry": false,
@@ -63,3 +54,15 @@ commands:
             ]
           }
         type: vscode-launch
+  - name: run
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
+        type: exec
+        command: dotnet run
+        component: dotnet
+  - name: update dependencies
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
+        type: exec
+        command: dotnet restore
+        component: dotnet

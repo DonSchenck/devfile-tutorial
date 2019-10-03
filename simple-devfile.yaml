@@ -1,9 +1,0 @@
-apiVersion: 1.0.0
-metadata:
-  name: minimal-workspace
-projects:
-  - name: mylocation
-    source:
-      type: git
-      location: 'https://github.com/donschenck/devfile-tutorial.git'
-      branch: master
