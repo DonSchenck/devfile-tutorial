@@ -38,7 +38,7 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
-        command: dotnet build
+        command: export DOTNET_CLI_HOME="/tmp" && dotnet build
         component: dotnet
   - name: Launch .NET Web Application on Debug mode
     actions:
@@ -62,11 +62,11 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
-        command: dotnet run
+        command: export DOTNET_CLI_HOME="/tmp" && dotnet run
         component: dotnet
   - name: update dependencies
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
-        command: dotnet restore
+        command: export DOTNET_CLI_HOME="/tmp" && dotnet restore
         component: dotnet
