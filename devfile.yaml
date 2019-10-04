@@ -28,6 +28,10 @@ components:
         containerPath: /home/user
     alias: dotnet
     image: 'mcr.microsoft.com/dotnet/core/sdk:3.0'
+    args:
+      - tail
+      - '-f'
+      - /dev/null
 apiVersion: 1.0.0
 commands:
   - name: build
