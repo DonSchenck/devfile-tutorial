@@ -1,13 +1,16 @@
+apiVersion: 1.0.0
 metadata:
   name: dotnet-web
+attributes:
+  persistVolumes: 'false'
+
 projects:
   - name: dotnet-web-simple
     source:
       location: 'https://github.com/che-samples/dotnet-web-simple'
       type: git
       branch: netcoreapp2.2
-attributes:
-  persistVolumes: 'false'
+
 components:
   - id: redhat-developer/che-omnisharp-plugin/latest
     memoryLimit: 1024Mi
@@ -28,7 +31,11 @@ components:
         containerPath: /home/user
     alias: dotnet
     image: 'mcr.microsoft.com/dotnet/core/sdk:3.0'
-apiVersion: 1.0.0
+    args:
+      - tail
+      - '-f'
+      - /dev/null
+
 commands:
   - name: build
     actions:
