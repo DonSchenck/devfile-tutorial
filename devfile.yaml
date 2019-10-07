@@ -33,10 +33,12 @@ components:
       - '-f'
       - /dev/null
     volumes:
-      - name: dotnetvol
+      - name: deps
         containerPath: /.dotnet
       - name: nuget
         containerPath: /.nuget
+      - name: local
+        containerPath: /.local
 apiVersion: 1.0.0
 commands:
   - name: build
