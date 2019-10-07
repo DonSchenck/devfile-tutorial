@@ -34,7 +34,7 @@ components:
       - /dev/null
     volumes:
       - name: dotnetvol
-        containerPath: /project/.dotnet
+        containerPath: /.dotnet
 apiVersion: 1.0.0
 commands:
   - name: build
