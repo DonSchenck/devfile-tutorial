@@ -32,11 +32,11 @@ components:
       - tail
       - '-f'
       - /dev/null
+    env:
+      - name: DOTNET_CLI_HOME
+        value: /tmp
 
 apiVersion: 1.0.0
-env:
-  - name: DOTNET_CLI_HOME
-    value: /tmp
 commands:
   - name: build
     actions:
