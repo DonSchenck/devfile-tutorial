@@ -32,13 +32,16 @@ components:
       - tail
       - '-f'
       - /dev/null
+    volumes:
+      - name: dotnetvol
+        containerPath: /project/.dotnet
 apiVersion: 1.0.0
 commands:
   - name: build
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
-        command: export DOTNET_CLI_HOME="/tmp" && dotnet build
+        command: dotnet build
         component: dotnet
   - name: Launch .NET Web Application on Debug mode
     actions:
@@ -62,11 +65,11 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
-        command: export DOTNET_CLI_HOME="/tmp" && dotnet run
+        command: dotnet run
         component: dotnet
   - name: update dependencies
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
         type: exec
-        command: export DOTNET_CLI_HOME="/tmp" && dotnet restore
+        command: dotnet restore
         component: dotnet
