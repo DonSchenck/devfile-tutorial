@@ -32,14 +32,11 @@ components:
       - tail
       - '-f'
       - /dev/null
-    volumes:
-      - name: deps
-        containerPath: /.dotnet
-      - name: nuget
-        containerPath: /.nuget
-      - name: local
-        containerPath: /.local
+
 apiVersion: 1.0.0
+env:
+  - name: DOTNET_CLI_HOME
+    value: /tmp
 commands:
   - name: build
     actions:
