@@ -56,7 +56,7 @@ commands:
                 {
                     "type": "netcoredbg",
                     "request": "launch",
-                    "program": "/projects/dotnet-web-simple/bin/Debug/netcoreapp3.0/web.dll",
+                    "program": "/projects/dotnet-three-example/bin/Debug/netcoreapp3.0/dotnet-three-example.dll",
                     "args": [],
                     "name": ".NET Core Launch (console)",
                     "stopAtEntry": false,
