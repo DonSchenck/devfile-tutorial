@@ -35,8 +35,6 @@ components:
     env:
       - name: DOTNET_CLI_HOME
         value: /tmp
-      - name: ASPNETCORE_URLS
-        value: 'http://0.0.0.0:5000'
     volumes:
       - name: dependencies
         containerPath: /.dotnet
