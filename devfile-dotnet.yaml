@@ -3,9 +3,9 @@ metadata:
 projects:
   - name: dotnet-web-simple
     source:
-      location: 'https://github.com/che-samples/dotnet-web-simple'
+      location: 'https://github.com/donschenck/dotnet-three-example'
       type: git
-      branch: netcoreapp2.2
+      branch: master
 attributes:
   persistVolumes: 'false'
 components:
