@@ -36,8 +36,10 @@ components:
       - name: DOTNET_CLI_HOME
         value: /tmp
     volumes:
-      - name: certs
+      - name: private
         containerPath: /etc/ssl/private
+      - name: certs
+        containerPath: /etc/ssl/certs
 
 apiVersion: 1.0.0
 commands:
