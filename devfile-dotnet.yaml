@@ -35,6 +35,9 @@ components:
     env:
       - name: DOTNET_CLI_HOME
         value: /tmp
+    volumes:
+      - name: dependencies
+        containerPath: /.dotnet
 
 apiVersion: 1.0.0
 commands:
