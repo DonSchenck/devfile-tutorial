@@ -35,6 +35,9 @@ components:
     env:
       - name: DOTNET_CLI_HOME
         value: /tmp
+    volumes:
+      - name: certs
+        containerPath: /etc/ssl/private
 
 apiVersion: 1.0.0
 commands:
