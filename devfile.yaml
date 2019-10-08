@@ -1,7 +1,7 @@
 metadata:
   name: dotnet-web
 projects:
-  - name: dotnet-web-simple
+  - name: dotnet-three-example
     source:
       location: 'https://github.com/donschenck/dotnet-three-example'
       type: git
@@ -32,18 +32,19 @@ components:
       - tail
       - '-f'
       - /dev/null
-    env:
-      - name: DOTNET_CLI_HOME
-        value: /tmp
-    volumes:
-      - name: certs
-        containerPath: /etc/ssl/private
+      volumes:
+      - name: dotnet
+        containerPath: /.dotnet
+      - name: local
+        containerPath: /.local
+      - name: nuget
+        containerPath: /.nuget
 
 apiVersion: 1.0.0
 commands:
   - name: build
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
+      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-three-example'
         type: exec
         command: dotnet build
         component: dotnet
@@ -67,13 +68,13 @@ commands:
         type: vscode-launch
   - name: run
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
+      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-three-example'
         type: exec
         command: dotnet run
         component: dotnet
   - name: update dependencies
     actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-web-simple'
+      - workdir: '${CHE_PROJECTS_ROOT}/dotnet-three-example'
         type: exec
         command: dotnet restore
         component: dotnet
