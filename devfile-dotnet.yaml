@@ -28,12 +28,12 @@ components:
         containerPath: /home/user
     alias: dotnet
     image: 'mcr.microsoft.com/dotnet/core/sdk:3.0'
-    args:
-      - tail
-      - '-f'
-      - /dev/null
+      args:
+        - tail
+        - '-f'
+        - /dev/null
     volumes:
-      - name: dotnet
+      - name: dependencies
         containerPath: /.dotnet
       - name: local
         containerPath: /.local
